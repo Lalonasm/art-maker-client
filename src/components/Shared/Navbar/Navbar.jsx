@@ -7,17 +7,13 @@ const Navbar = () => {
     const navLinks =
         <>
             <li className=""><NavLink to="/">Home</NavLink></li>
-            <li className=""><NavLink to="/cardMaking">Card Making</NavLink></li>
-            <li className=""><NavLink to="/scrabBooking">Scrab Booking</NavLink></li>
-            <li className=""><NavLink to="/paperQuilling">Paper Quilling & origami 
+            <li className=""><NavLink to="/allArtCraft">All Art & craft Items</NavLink></li>
+            <li className=""><NavLink to="/addCraft">Add Craft Item</NavLink></li>
+            <li className=""><NavLink to="/myArtList">My Art&Craft List
             </NavLink></li>
-            <li className=""><NavLink to="/GlassPainting">Glass Painting  
-            </NavLink></li>
-            <li className=""><NavLink to="/lampWorking "> Lamp Working  </NavLink></li>
-            <li className=""><NavLink to="/glassDying">Glass Dying & Staining 
-            </NavLink></li>
-            <li className=""><NavLink to="/login">Login</NavLink></li>
-            <li className=""><NavLink to="/register">Register</NavLink></li>
+            
+            {/* <li className=""><NavLink to="/login">Login</NavLink></li> */}
+            {/* <li className=""><NavLink to="/register">Register</NavLink></li> */}
 
         </>
 
@@ -49,7 +45,7 @@ const Navbar = () => {
                        {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Craft Maker</a>
+                <a className="btn btn-ghost text-xl ">Craft Maker</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -57,7 +53,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <a className="btn">Register</a>
             </div>
         </div>
     );

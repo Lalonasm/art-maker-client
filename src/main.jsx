@@ -8,17 +8,24 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home.jsx';
 import Navbar from './components/Shared/Navbar/Navbar.jsx';
+import Footer from './components/Shared/Footer/Footer.jsx';
+import ErrorPage from './components/pages/ErrorPage/ErrorPage.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: '/navbar',
         element: <Navbar></Navbar>
       },
+      {
+        path:'/footer',
+        element:<Footer></Footer>
+      }
     ]
   },
 ]);
