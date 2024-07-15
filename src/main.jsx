@@ -7,12 +7,19 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './components/Home/Home.jsx';
+import Navbar from './components/Shared/Navbar/Navbar.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    children: [
+      {
+        path: '/navbar',
+        element: <Navbar></Navbar>
+      },
+    ]
   },
 ]);
 
