@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
             <li className=""><NavLink to="/addCraft">Add Craft Item</NavLink></li>
             <li className=""><NavLink to="/myArtList">My Art&Craft List
             </NavLink></li>
-            
+
             {/* <li className=""><NavLink to="/login">Login</NavLink></li> */}
             {/* <li className=""><NavLink to="/register">Register</NavLink></li> */}
 
@@ -42,18 +42,18 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                       {navLinks}
+                        {navLinks}
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl ">Craft Maker</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                  {navLinks}
+                    {navLinks}
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Register</a>
+                <a className="btn"> <Link to={'/register'}>Register</Link> </a>
             </div>
         </div>
     );
