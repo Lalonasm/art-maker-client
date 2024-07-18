@@ -1,7 +1,17 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleRegister = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
 
     const navLinks =
@@ -53,7 +63,18 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn"> <Link to={'/register'}>Register</Link> </a>
+                {
+                    user
+                        ?
+                        <button onClick={handleRegister} className="btn">Register</button>
+                        :
+                        <div className="navbar-end">
+                            <Link to={'/login'} className="btn">Login</Link>
+                            <Link to={'/register'} className="btn">Register</Link>
+                        </div>
+                }
+                {/* <a className="btn"> <Link to={'/register'}>Register</Link> </a> */}
+
             </div>
         </div>
     );
