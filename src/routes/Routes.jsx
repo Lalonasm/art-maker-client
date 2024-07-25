@@ -8,6 +8,8 @@ import Register from "../components/pages/Register/Register";
 import AllArtCraft from "../components/pages/AllArtCraft/AllArtCraft";
 import AddCraft from "../components/pages/AddCraft/AddCraft";
 import MyArtList from "../components/pages/MyArtList/MyArtList";
+import PrivateRoute from "./PrivateRoute";
+import Banner from "../components/pages/Banner/Banner";
 
 const router = createBrowserRouter([
     {
@@ -33,11 +35,17 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addCraft',
-                element: <AddCraft></AddCraft>
+                element:<PrivateRoute>
+                     <AddCraft></AddCraft>
+                </PrivateRoute>
             },
             {
                 path: '/myArtList',
                 element: <MyArtList></MyArtList>
+            },
+            {
+                path:'/banner',
+                element:<Banner></Banner>
             }
         ]
     }

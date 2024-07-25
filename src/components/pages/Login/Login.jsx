@@ -26,21 +26,22 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "You are login Successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 console.error(error);
-                // setRegisterError(error.message)
-                <Fade>
-                    <p>I will gently appear as I enter the viewport</p>
-                </Fade>
-                 Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "You are Registered Successfully",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
+                setRegisterError(error.message)
+                // <Fade>
+                //     <p>I will gently appear as I enter the viewport</p>
+                // </Fade>
+                 
             })
     }
 
