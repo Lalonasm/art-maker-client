@@ -10,7 +10,7 @@ const Home = () => {
         <div>
             <Navbar></Navbar>
             <Header></Header>
-            <h2 className="bg-red-500 font-extrabold    font-poppins">This is the Home page of Art Maker</h2>
+            <h2 className="bg-gray-400 p-2 text-black font-extrabold text-5xl font-poppins">This is the Home page of Art Maker</h2>
             <Footer></Footer>
 
 

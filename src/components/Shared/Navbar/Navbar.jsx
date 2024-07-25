@@ -16,10 +16,10 @@ const Navbar = () => {
 
     const navLinks =
         <>
-            <li className=""><NavLink to="/">Home</NavLink></li>
-            <li className=""><NavLink to="/allArtCraft">All Art & craft Items</NavLink></li>
-            <li className=""><NavLink to="/addCraft">Add Craft Item</NavLink></li>
-            <li className=""><NavLink to="/myArtList">My Art&Craft List
+            <li className="hover:bg-sky-700 rounded-md"><NavLink to="/">Home</NavLink></li>
+            <li className="hover:bg-sky-700 rounded-md"><NavLink to="/allArtCraft">All Art & craft Items</NavLink></li>
+            <li className="hover:bg-sky-700 rounded-md"><NavLink to="/addCraft">Add Craft Item</NavLink></li>
+            <li className="hover:bg-sky-700 rounded-md"><NavLink to="/myArtList">My Art&Craft List
             </NavLink></li>
 
             {/* <li className=""><NavLink to="/login">Login</NavLink></li> */}
@@ -55,7 +55,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl ">Craft Maker</a>
+                <Link to={'/'} className="btn btn-ghost text-red-300 font-extrabold text-2xl hover:bg-sky-700 ">Craft Maker</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -69,8 +69,8 @@ const Navbar = () => {
                         <button onClick={handleRegister} className="btn">Register</button>
                         :
                         <div className="navbar-end">
-                            <Link to={'/login'} className="btn">Login</Link>
-                            <Link to={'/register'} className="btn">Register</Link>
+                            <Link to={'/login'} className="btn hover:bg-sky-700">Login</Link>
+                            <Link to={'/register'} className="btn hover:bg-sky-700">Register</Link>
                         </div>
                 }
                 {/* <a className="btn"> <Link to={'/register'}>Register</Link> </a> */}
