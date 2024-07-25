@@ -1,11 +1,18 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { useTypewriter } from "react-simple-typewriter";
 
 
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext)
+
+    const [text] = useTypewriter({
+        words: ['Hello', 'From', 'Typewriter', 'Hook!'],
+        loop: 3,
+        onLoopDone: () => console.log(`loop completed after 3 runs.`)
+      })
 
     const handleRegister = () => {
         logOut()
@@ -55,7 +62,9 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <Link to={'/'} className="btn btn-ghost text-red-300 font-extrabold text-2xl hover:bg-sky-700 ">Craft Maker</Link>
+                <Link to={'/'} className="btn btn-ghost text-red-300 font-extrabold text-2xl hover:bg-sky-700 ">Craft Maker 
+                {/* <span>[text]</span> */}
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

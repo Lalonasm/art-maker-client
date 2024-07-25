@@ -3,6 +3,7 @@ import Navbar from "../../Shared/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Fade } from "react-awesome-reveal";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 
 
@@ -66,7 +67,7 @@ const Login = () => {
         <div>
             <Navbar></Navbar>
             <div>
-                <h2 className="text-4xl  font-bold my-10 text-center">Please Register</h2>
+               <Fade> <h2 className="text-4xl  font-bold my-10 text-center">Please Register</h2></Fade>
                 <form onSubmit={handleRegister} className="card-body md:w-3/4 lg:w-1/2 mx-auto">
                     <div className="form-control">
                         <label className="label">
