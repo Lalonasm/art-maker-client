@@ -1,10 +1,20 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 
 
 const ViewDetails = () => {
 const craft = useLoaderData();
 
-const { _id, image, item, subcategory, description, price, rating, customization, stockstatus, time, email, name } = craft;
+// const { _id } = useParams();
+//     const intId = parseInt(_id);
+//     console.log(intId)
+//     const craft1 = craft.find(craft1 => craft1._id === intId)
+//     console.log(craft1)
+//     console.log(_id, intId)
+
+const {  image, item, subcategory, description, price, rating, customization, stockstatus, time, email, name } = craft;
+
+
+
 
     return (
         <div>
