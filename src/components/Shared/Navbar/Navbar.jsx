@@ -1,19 +1,14 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { useTypewriter } from "react-simple-typewriter";
+// import { useTypewriter } from "react-simple-typewriter";
 
 
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext)
 
-    const [text] = useTypewriter({
-        words: ['Hello', 'From', 'Typewriter', 'Hook!'],
-        loop: 3,
-        onLoopDone: () => console.log(`loop completed after 3 runs.`)
-      })
-
+    
     const handleRegister = () => {
         logOut()
             .then()
@@ -29,8 +24,7 @@ const Navbar = () => {
             <li className="hover:bg-sky-700 rounded-md"><NavLink to="/myArtList">My Art&Craft List
             </NavLink></li>
 
-            {/* <li className=""><NavLink to="/login">Login</NavLink></li> */}
-            {/* <li className=""><NavLink to="/register">Register</NavLink></li> */}
+           
 
         </>
 
@@ -62,7 +56,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <Link to={'/'} className="btn btn-ghost text-red-300 font-extrabold text-2xl hover:bg-sky-700 ">Craft Maker 
+                <Link to={'/'} title="Craft Maker" className="btn btn-ghost text-red-300 font-extrabold text-2xl hover:bg-sky-700 ">Craft Maker 
                 {/* <span>[text]</span> */}
                 </Link>
             </div>
