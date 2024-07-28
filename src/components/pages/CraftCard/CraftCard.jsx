@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { CiEdit } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
+import Swal from "sweetalert2";
 
 
-const CraftCard = ({ craft }) => {
+const CraftCard = ({ craft, setCrafts, crafts }) => {
 
 
 
@@ -12,6 +13,36 @@ const CraftCard = ({ craft }) => {
 
     const handleDelete = _id => {
         console.log(_id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/craft/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your Craft Item has been deleted.",
+                                icon: "success"
+                            });
+                            const remaining = crafts.filter(craf => craf._id !== _id);
+                            setCrafts(remaining);
+
+                        }
+                    })
+            }
+        });
     }
 
     return (
@@ -32,10 +63,10 @@ const CraftCard = ({ craft }) => {
                     <ul className="menu menu-horizontal bg-base-200 rounded-box">
 
                         <li>
-                            <a> <CiEdit></CiEdit>
+                            <Link to={`/updateCraft/${_id}`}> <CiEdit></CiEdit>
 
                                 Edit
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a onClick={() => handleDelete(_id)} className="bg-red-400">
@@ -47,7 +78,7 @@ const CraftCard = ({ craft }) => {
                     </ul>
                 </div>
                 <div className=" ">
-                    <Link to={`/craft/${_id}`}> <button className="btn  flex-grow w-full text-white bg-green-500">View Details</button></Link>
+                    <Link to={`/craftDetails/${_id}`}> <button className="btn  flex-grow w-full text-white bg-green-500">View Details</button></Link>
                 </div>
             </div>
         </div>

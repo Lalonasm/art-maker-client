@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import Banner from "../components/pages/Banner/Banner";
 // import ViewDetailPage from "../components/pages/ViewDetailPage/ViewDetailPage";
 import ViewDetails from "../components/pages/ViewDetailPage/ViewDetails";
+import UpdateCraft from "../components/pages/UpdateCraft/UpdateCraft";
 
 const router = createBrowserRouter([
     {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path: '/allArtCraft',
                 element: <AllArtCraft></AllArtCraft>,
-                loader:()=>fetch('http://localhost:5000/craft')
+                loader: () => fetch('http://localhost:5000/craft')
             },
             {
                 path: '/addCraft',
@@ -43,14 +44,20 @@ const router = createBrowserRouter([
                 </PrivateRoute>
             },
             {
+                path: '/updateCraft/:id',
+                element:<PrivateRoute> <UpdateCraft></UpdateCraft></PrivateRoute>,
+                // loader: ({params})=>fetch(`http://localhost:5000/craft/${params.id}`)
+                loader: ({params})=>fetch(`http://localhost:5000/craft/${params.id}`)
+            },
+            {
                 path: '/myArtList',
                 element: <PrivateRoute><MyArtList></MyArtList></PrivateRoute>
             },
             {
-                path: '/craft/:id',
+                path: '/craftDetails/:id',
                 element: <ViewDetails></ViewDetails>,
-                // loader: () => fetch(`http://localhost:5000/craft/`)
-              },
+                loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
+            },
             {
                 path: '/banner',
                 element: <Banner></Banner>
