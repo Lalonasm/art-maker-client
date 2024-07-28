@@ -75,7 +75,7 @@ const Navbar = () => {
                 {
                     user
                         ?
-                        <button onClick={handleRegister} className="btn">Register</button>
+                        <button onClick={handleRegister} className="btn">Sign Out</button>
                         :
                         <div className="navbar-end">
                             <Link to={'/login'} className="btn hover:bg-sky-700">Login</Link>

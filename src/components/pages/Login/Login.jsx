@@ -41,16 +41,16 @@ const Login = () => {
                 // <Fade>
                 //     <p>I will gently appear as I enter the viewport</p>
                 // </Fade>
-                 
+
             })
     }
 
 
     return (
         <div>
-            <Navbar></Navbar>
+           
             <div>
-               <Fade> <h2 className="text-4xl  font-bold my-10 text-center">Please Login</h2></Fade>
+                <Fade> <h2 className="text-4xl  font-bold my-10 text-center">Please Login</h2></Fade>
                 <form onSubmit={handleLogin} className="card-body md:w-3/4 lg:w-1/2 mx-auto">
                     <div className="form-control">
                         <label className="label">

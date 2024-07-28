@@ -10,6 +10,8 @@ import AddCraft from "../components/pages/AddCraft/AddCraft";
 import MyArtList from "../components/pages/MyArtList/MyArtList";
 import PrivateRoute from "./PrivateRoute";
 import Banner from "../components/pages/Banner/Banner";
+// import ViewDetailPage from "../components/pages/ViewDetailPage/ViewDetailPage";
+import ViewDetails from "../components/pages/ViewDetailPage/ViewDetails";
 
 const router = createBrowserRouter([
     {
@@ -31,21 +33,27 @@ const router = createBrowserRouter([
             },
             {
                 path: '/allArtCraft',
-                element: <AllArtCraft></AllArtCraft>
+                element: <AllArtCraft></AllArtCraft>,
+                loader:()=>fetch('http://localhost:5000/craft')
             },
             {
                 path: '/addCraft',
-                element:<PrivateRoute>
-                     <AddCraft></AddCraft>
+                element: <PrivateRoute>
+                    <AddCraft></AddCraft>
                 </PrivateRoute>
             },
             {
                 path: '/myArtList',
-                element: <MyArtList></MyArtList>
+                element: <PrivateRoute><MyArtList></MyArtList></PrivateRoute>
             },
             {
-                path:'/banner',
-                element:<Banner></Banner>
+                path: '/craft/:id',
+                element: <ViewDetails></ViewDetails>,
+                // loader: () => fetch(`http://localhost:5000/craft/`)
+              },
+            {
+                path: '/banner',
+                element: <Banner></Banner>
             }
         ]
     }
