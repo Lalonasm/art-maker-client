@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
-// import { useTypewriter } from "react-simple-typewriter";
+
 
 
 const Navbar = () => {
@@ -57,7 +57,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to={'/'} title="Craft Maker" className="btn btn-ghost text-red-300 font-extrabold text-2xl hover:bg-sky-700 ">Craft Maker 
-                {/* <span>[text]</span> */}
+         
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -76,7 +76,7 @@ const Navbar = () => {
                             <Link to={'/register'} className="btn hover:bg-sky-700">Register</Link>
                         </div>
                 }
-                {/* <a className="btn"> <Link to={'/register'}>Register</Link> </a> */}
+             
 
             </div>
         </div>
