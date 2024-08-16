@@ -1,6 +1,6 @@
 
 import Footer from "../../Shared/Footer/Footer";
-import Navbar from "../../Shared/Navbar/Navbar";
+// import Navbar from "../../Shared/Navbar/Navbar";
 import Swal from 'sweetalert2'
 
 
@@ -26,7 +26,7 @@ const AddCraft = () => {
         console.log(newCraft);
 
         // send data to the server
-        fetch('http://localhost:5000/craft',{
+        fetch('https://y-ashen-six.vercel.app/craft',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

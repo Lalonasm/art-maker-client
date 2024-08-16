@@ -10,7 +10,7 @@ const AllArtCraft = () => {
 
     const loadedCrafts = useLoaderData();
     const [crafts, setCrafts] = useState(loadedCrafts);
-    console.log(crafts)
+    // console.log(crafts)
 
     return (
         <div >
@@ -36,7 +36,7 @@ const AllArtCraft = () => {
             </div> */}
 
 
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
     );
 };

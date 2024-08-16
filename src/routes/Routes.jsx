@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path: '/allArtCraft',
                 element: <AllArtCraft></AllArtCraft>,
-                loader: () => fetch('http://localhost:5000/craft')
+                loader: () => fetch('https://y-ashen-six.vercel.app/craft')
             },
             {
                 path: '/addCraft',
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             {
                 path: '/updateCraft/:id',
                 element:<PrivateRoute> <UpdateCraft></UpdateCraft></PrivateRoute>,
-                loader: ({params})=>fetch(`http://localhost:5000/craft/${params.id}`)
+                loader: ({params})=>fetch(`https://y-ashen-six.vercel.app/craft/${params.id}`)
             },
             {
                 path: '/myArtList',
@@ -55,12 +55,9 @@ const router = createBrowserRouter([
             {
                 path: '/craftDetails/:id',
                 element: <ViewDetails></ViewDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
+                loader: ({params}) => fetch(`https://y-ashen-six.vercel.app/craft/${params.id}`)
             },
-            {
-                path: '/banner',
-                element: <Banner></Banner>
-            }
+            
         ]
     }
 ])
